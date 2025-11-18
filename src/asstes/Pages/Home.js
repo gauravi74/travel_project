@@ -24,6 +24,8 @@ import trending2 from '../image/trending2.jpg'
 import trending3 from '../image/trending3.jpg'
 import trending4 from '../image/trending4.jpg'
 import image1 from '../image/trendingb-2.jpg'
+import image2 from '../image/trending-large.jpg'
+import image3 from '../image/trendingb-1.jpg'
 
 function Home() {
 
@@ -152,85 +154,85 @@ function Home() {
             <h5>Safari</h5>
           </div>
         </Slider>
-      {/* </Container> */}
+        {/* </Container> */}
 
-      {/* Travel Perfection */}
-      <div className="steps-container">
+        {/* Travel Perfection */}
+        <div className="steps-container">
 
-        {/* Subtitle */}
-        <p className="subtitle">3 Step Of The Perfect Tour</p>
+          {/* Subtitle */}
+          <p className="subtitle">3 Step Of The Perfect Tour</p>
 
-        {/* Title */}
-        <h2 className="title">
-          Find <span>Travel Perfection</span>
-        </h2>
+          {/* Title */}
+          <h2 className="title">
+            Find <span>Travel Perfection</span>
+          </h2>
 
-        {/* Description */}
-        <p className="text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-        </p>
+          {/* Description */}
+          <p className="text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
 
-        {/* Steps Grid */}
-        <Container>
-          <div className="steps-grid">
-            <div className='row'>
-              <div className='col-lg-3'>
-                {/* Card 1 */}
-                <div className="step-card">
+          {/* Steps Grid */}
+          <Container>
+            <div className="steps-grid">
+              <div className='row'>
+                <div className='col-lg-3'>
+                  {/* Card 1 */}
+                  <div className="step-card">
 
-                  <h3>Tell Us What You Want To Do</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    <h3>Tell Us What You Want To Do</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                  </div>
                 </div>
-              </div>
-              <div className='col-lg-3'>
-                {/* Card 2 */}
-                <div className="step-card">
+                <div className='col-lg-3'>
+                  {/* Card 2 */}
+                  <div className="step-card">
 
-                  <h3>Share Your Travel Locations</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    <h3>Share Your Travel Locations</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                  </div>
                 </div>
-              </div>
-              <div className='col-lg-3'>
-                {/* Card 3 */}
-                <div className="step-card">
+                <div className='col-lg-3'>
+                  {/* Card 3 */}
+                  <div className="step-card">
 
-                  <h3>Share Your Travel Preference</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    <h3>Share Your Travel Preference</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                  </div>
                 </div>
-              </div>
-              <div className='col-lg-3'>
-                {/* Card 4 */}
-                <div className="step-card">
+                <div className='col-lg-3'>
+                  {/* Card 4 */}
+                  <div className="step-card">
 
-                  <h3>We Are 100% Trusted Tour Agency</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    <h3>We Are 100% Trusted Tour Agency</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Container>
-      </div>
+          </Container>
+        </div>
 
 
-      {/* Explore Destinations */}
-      <div className='steps-container'>
-        {/* Subtitle */}
-        <p className="subtitle">Top Destinations</p>
+        {/* Explore Destinations */}
+        <div className='steps-container'>
+          {/* Subtitle */}
+          <p className="subtitle">Top Destinations</p>
 
-        {/* Title */}
-        <h2 className="title">
-          Find <span>Explore Top Destinations</span>
-        </h2>
+          {/* Title */}
+          <h2 className="title">
+            Find <span>Explore Top Destinations</span>
+          </h2>
 
-        {/* Description */}
-        <p className="text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-        </p>
-        {/* <Container> */}
+          {/* Description */}
+          <p className="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
+          {/* <Container> */}
           <div className='row'>
             <div className='col-lg-5'>
               <div>
-                <img src={de1} alt="image" className='logo' />
+                <img src={de1} alt="image1" className='logo' />
                 <h4>England</h4>
                 <h3>London</h3>
               </div>
@@ -239,29 +241,29 @@ function Home() {
             <div className='col-lg-7'>
               <div className='row'>
                 <div className='col-lg-6 imgbox'>
-                  <img src={de4} alt="image" className='logo' />
+                  <img src={de4} alt="image2" className='logo' />
                 </div>
                 <div className='col-lg-6 imgbox'>
-                  <img src={de2} alt="image" className='logo' />
+                  <img src={de2} alt="image3" className='logo' />
                 </div>
               </div>
               <div className='row'>
                 <div className='col-lg-6 imgbox'>
-                  <img src={de3} alt="image" className='logo' />
+                  <img src={de3} alt="image4" className='logo' />
                 </div>
                 <div className='col-lg-6 imgbox'>
-                  <img src={de5} alt="image" className='logo' />
+                  <img src={de5} alt="image5" className='logo' />
                 </div>
               </div>
             </div>
           </div>
-        {/* </Container> */}
+          {/* </Container> */}
 
-      </div>
+        </div>
 
 
-      {/* get to know */}
-      {/* <Container> */}
+        {/* get to know */}
+        {/* <Container> */}
         <div className=''>
           <div className='row'>
             <div className='col-lg-6'>
@@ -318,11 +320,11 @@ function Home() {
             </div>
           </div>
         </div>
-      {/* </Container> */}
+        {/* </Container> */}
 
 
-      {/* Tour Packages */}
-      {/* <Container> */}
+        {/* Tour Packages */}
+        {/* <Container> */}
         <div className='steps-container2'>
           <h3 className='subtitle'>Top Pick</h3>
           <h1 className='title'>Best <span> Tour Packages</span></h1>
@@ -436,87 +438,165 @@ function Home() {
         </div>
 
 
-      {/* </Container> */}
-
-
-      {/* Top Deals */}
-      {/* <Container> */}
-      <div className='steps-container'>
-        {/* subtitle */}
-        <p className="subtitle">Top Deals</p>
-
-        {/* Title */}
-        <h2 className="title">
-          The Last <span> Minute Deals </span>
-        </h2>
-
-        {/* Description */}
-        <p className="text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-        </p>
-        {/* <Container> */}
-        <div className='row'>
-          <div className='col-lg-5'>
-            <div className='card'>
-              <img src={image1} alt="Norway Lake" className="tour-img" />
-            </div>
-            <h4>Norway</h4>
-          </div>
-          <div className='col-lg-7'>
-            <div className='row'>
-              <div className='col-lg-6'>
-                <div className="tourcard">
-                  <img src={trending4} alt="Santorini" className="tourimg" />
-
-                  <div className="tour-content">
-                    <p className="tour-country">Maldives</p>
-                    <h2 className="tour-title">Hurawalhi Island</h2>
-
-                    <div className="tour-rating">
-                      <span>(18)</span>
-                    </div>
-
-                    <p className="tour-desc">
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                    </p>
-
-                    <p className="tour-price">
-                      $260.00 <span> | Per person</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className='col-lg-6'>
-                <div className="tourcard">
-                  <img src={trending4} alt="Santorini" className="tourimg" />
-
-                  <div className="tour-content">
-                    <p className="tour-country">Maldives</p>
-                    <h2 className="tour-title">Hurawalhi Island</h2>
-
-                    <div className="tour-rating">
-                      <span>(18)</span>
-                    </div>
-
-                    <p className="tour-desc">
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                    </p>
-
-                    <p className="tour-price">
-                      $260.00 <span> | Per person</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
         {/* </Container> */}
 
 
+        {/* Top Deals */}
+        {/* <Container> */}
+        <div className='steps-container'>
+          {/* subtitle */}
+          <p className="subtitle">Top Deals</p>
 
-      </div>
+          {/* Title */}
+          <h2 className="title">
+            The Last <span> Minute Deals </span>
+          </h2>
+
+          {/* Description */}
+          <p className="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
+          {/* <Container> */}
+          <div className='row'>
+            <div className='col-lg-5'>
+              <div className='card'>
+                <img src={image1} alt="Norway Lake" className="tour-img" />
+              </div>
+              {/* <h4>Norway</h4> */}
+              <div className='card'>
+                <img src={image2} alt="Norway Lake" className="tour-img" />
+              </div><div className='card'>
+                <img src={image3} alt="Norway Lake" className="tour-img" />
+              </div>
+            </div>
+            <div className='col-lg-7'>
+              <div className='row'>
+                <div className='col-lg-6 mb-4'>
+                  <div className='tourcard' id='crd'>
+                    <div >
+                      <img src={trending} alt="Santorini" className="tourimage" />
+                    </div>
+                    <div className="tourcontent">
+                      <p className="tourcountry">Greece</p>
+                      <h2 className="tourtitle">Santorini, Oia</h2>
+
+                      <div className="tourrating">
+                        <span>(38)</span>
+                      </div>
+
+                      <p className="tourdesc">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                      </p>
+
+                      <p className="tourprice">
+                        $180.00 <span> | Per person</span>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+                <div className='col-lg-6 mb-4'>
+                  <div className='tourcard' id='crd'>
+                    <div >
+                      <img src={trending} alt="Santorini" className="tourimage" />
+                    </div>
+                    <div className="tourcontent">
+                      <p className="tourcountry">Greece</p>
+                      <h2 className="tourtitle">Santorini, Oia</h2>
+
+                      <div className="tourrating">
+                        <span>(38)</span>
+                      </div>
+
+                      <p className="tourdesc">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                      </p>
+
+                      <p className="tourprice">
+                        $180.00 <span> | Per person</span>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+                <div className='col-lg-6 mb-4'>
+                  <div className='tourcard' id='crd'>
+                    <div >
+                      <img src={trending} alt="Santorini" className="tourimage" />
+                    </div>
+                    <div className="tourcontent">
+                      <p className="tourcountry">Greece</p>
+                      <h2 className="tourtitle">Santorini, Oia</h2>
+
+                      <div className="tourrating">
+                        <span>(38)</span>
+                      </div>
+
+                      <p className="tourdesc">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                      </p>
+
+                      <p className="tourprice">
+                        $180.00 <span> | Per person</span>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+                <div className='col-lg-6 mb-4'>
+                  <div className='tourcard' id='crd'>
+                    <div >
+                      <img src={trending3} alt="Santorini" className="tourimage" />
+                    </div>
+                    <div className="tourcontent">
+                      <p className="tourcountry">Greece</p>
+                      <h2 className="tourtitle">Santorini, Oia</h2>
+
+                      <div className="tourrating">
+                        <span>(38)</span>
+                      </div>
+
+                      <p className="tourdesc">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                      </p>
+
+                      <p className="tourprice">
+                        $180.00 <span> | Per person</span>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          
+          {/* </Container> */}
+
+
+
+        </div>
+
+
+        {/* Love Where Your're Going */}
+        <div className='steps-container'>
+          {/* subtitle */}
+          <p className="subtitle">Love Where Your're Going</p>
+
+          {/* Title */}
+          <h2 className="title">
+          Explore Your Life, <span> Travel Where You Want! </span>
+          </h2>
+
+          {/* Description */}
+          <p className="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+        </div>
+
       </Container>
 
 

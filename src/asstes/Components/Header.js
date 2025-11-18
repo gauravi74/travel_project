@@ -9,18 +9,18 @@ import logo from '../image/logo.png'
 function Header() {
     return (
         <>
-        <div className='topbar'>
-            <div className='container'>
-                <div className='topbar-left'>
-                    <span>Thursday, Mar 26, 2021</span>
-                    <span>Hollywood, America</span>
-                    <span>Mon-Fri: 10 AM - 5 AM </span>
+            <div className='topbar'>
+                <div className='container'>
+                    <div className='topbar-left'>
+                        <span>Thursday, Mar 26, 2021</span>
+                        <span>Hollywood, America</span>
+                        <span>Mon-Fri: 10 AM - 5 AM </span>
+                    </div>
+
                 </div>
-                
             </div>
-        </div>
             <Navbar expand="lg" className="bg-body-tertiary">
-                
+
                 <Container className='main-header'>
                     <img src={logo} alt='logo' />
                     {/* <Navbar.Brand href="#home">TRAVELIN</Navbar.Brand> */}
@@ -31,20 +31,20 @@ function Header() {
                             <Link to="/about" className='nav-link'>ABOUT</Link>
                             <Link to="" className='nav-link'>DESTINATIONS</Link>
                             <Link to="" className='nav-link'>TOUR</Link>
-                            <Link to="" className='nav-link'>BLOGS</Link>  
+                            <Link to="" className='nav-link'>BLOGS</Link>
                         </Nav>
-                        
+
                         <Link to="" className='nav-link' id='login-link'>LOGIN/REGISTER</Link>
-                        <a href='#' className='btn' id='book-btn'>BOOK NOW</a>
+                        <a href='Home.js' className='btn' id='book-btn'>BOOK NOW</a>
                     </Navbar.Collapse>
-                    <nav> 
-                        
+                    <nav>
+
                     </nav>
                 </Container>
             </Navbar>
 
 
-            
+
         </>
     );
 }
