@@ -137,33 +137,39 @@ function Footer() {
                 <div className='footer-links'>
                   <h3 className='white'>Categories</h3>
                   <ul>
-                    <li className='white'><a href='#'>Travel</a></li>
-                    <li className='white'><a href='#'>Technology</a></li>
-                    <li className='white'><a href='#'>Lifestyle</a></li>
-                    <li className='white'><a href='#'>Destinations</a></li>
-                    <li className='white'><a href='#'>Entertainment</a></li>
-                    <li className='white'><a href='#'>Business</a></li>
+                    <li className='white'><Link to='/pagenotfound'>Travel</Link></li>
+                    <li className='white'><Link to='/pagenotfound'>Technology</Link></li>
+                    <li className='white'><Link to='/pagenotfound'>Lifestyle</Link></li>
+                    <li className='white'><Link to='/pagenotfound'>Destinations</Link></li>
+                    <li className='white'><Link to='/pagenotfound'>Entertainment</Link></li>
+                    <li className='white'><Link to='/pagenotfound'>Business</Link></li>
                   </ul>
                 </div>
               </div>
-              <div className='col-lg-4 col-md-6 col-sm-12 mb-3'>
-                <div className='footer-links'>
-                  <h3 className='white'>Newsletter</h3>
-                  <div className='newsletter-form'>
-                    <p className='mb-3 footer-text'>Jin our community of over 200,000 global readers who receives emails filled with news, promotions, and other good stuff.</p>
-                    <form className='border-0 d-flex '>
-                      {/* <div className='row'> */}
-                      {/* <div className='col-lg-10 col-md-12 col-sm-12 mb-2'> */}
-                      <input type='text' className='form-control newsletter-input' placeholder='Email Address' />
-                      {/* </div> */}
-                      {/* <div className='col-lg-2 col-md-12 col-sm-12 mb-2'> */}
-                      <button className='nir-btn ms-2 newsletter-btn'>Subscribe</button>
-                      {/* </div> */}
-                      {/* </div> */}
+              <div className="col-lg-4 col-md-6 col-sm-12 mb-3">
+                <div className="footer-links">
+                  <h3 className="white">Newsletter</h3>
+
+                  <div className="newsletter-form">
+                    <p className="mb-3 footer-text">
+                      Join our community of over 200,000 global readers who receive emails filled with news, promotions, and other good stuff.
+                    </p>
+
+                    <form className="newsletter-form-inner d-flex flex-column flex-md-row gap-2">
+                      <input
+                        type="email"
+                        className="form-control newsletter-input"
+                        placeholder="Email Address"
+                      />
+                      <button type="submit" className="nir-btn newsletter-btn">
+                        Subscribe
+                      </button>
                     </form>
+
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
 

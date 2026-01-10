@@ -20,8 +20,9 @@ function Partners() {
 
   return (
     <>
-      <Container>
+     
         <section className='page-section '>
+        <Container>
           <div className='steps-container  '>
             {/* subtitle */}
             <p className="subtitle">Our Partners</p>
@@ -84,12 +85,13 @@ function Partners() {
 
 
           </div>
+          </Container>
         </section>
 
 
 
 
-
+<Container>
         <section className="partnerships-section">
           {/* <h2 className="section-title">Why Our Partnerships Matter To You</h2>
           <div className="partnerships-grid">

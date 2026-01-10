@@ -26,9 +26,9 @@ function Guides() {
         }
       },
       {
-        breakpoint: 768, // Mobile
+        breakpoint: 992, // Tablet
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         }
       },
       {

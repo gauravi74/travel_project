@@ -184,7 +184,7 @@ function Tourdetails() {
 
                                 <div id="iternary" className='accrodion-grp faq-accrodion mb-4' data-grp-name="faq-accrodion">
 
-                                    <div className="accordion-item">
+                                    <div className="accordion-item active">
                                         <input type="radio" name="accordion" id="day1" defaultChecked />
 
                                         <label htmlFor="day1" className="accordion-header">
@@ -194,9 +194,7 @@ function Tourdetails() {
 
                                         <div className="accordion-body">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa,
-                                                inventore cumque veniam, praesentium velit incidunt rem quas a,
-                                                quos eos ipsum, reprehenderit voluptatem.
+                                            Barcelona – Zaragoza – Madrid is a major travel route in Spain connecting the Mediterranean city of Barcelona with the capital, Madrid, via the historic city of Zaragoza. It is well served by fast trains and links different regions of the country.
                                             </p>
                                         </div>
                                     </div>
@@ -209,8 +207,7 @@ function Tourdetails() {
                                         </label>
                                         <div className="accordion-body">
                                             <p>
-                                                After breakfast, depart from Zurich and travel through the scenic
-                                                Swiss countryside before reaching Geneva.
+                                            Zurich – Biel/Bienne – Neuchâtel – Geneva is a scenic route across Switzerland that connects the country’s largest city with the French-speaking west. It passes through lakeside towns and bilingual regions, offering beautiful views, cultural diversity, and excellent rail connections.
                                             </p>
                                         </div>
                                     </div>
@@ -223,8 +220,7 @@ function Tourdetails() {
                                         </label>
                                         <div className="accordion-body">
                                             <p>
-                                                After breakfast, depart from Zurich and travel through the scenic
-                                                Swiss countryside before reaching Geneva.
+                                            Enchanting Engelberg is a beautiful mountain town in Switzerland, known for its snowy peaks, alpine scenery, and peaceful atmosphere. It is a popular destination for skiing, hiking, and enjoying nature all year round.
                                             </p>
                                         </div>
                                     </div>
@@ -237,8 +233,7 @@ function Tourdetails() {
                                         </label>
                                         <div className="accordion-body">
                                             <p>
-                                                After breakfast, depart from Zurich and travel through the scenic
-                                                Swiss countryside before reaching Geneva.
+                                            Barcelona – Zaragoza – Madrid is a popular travel route in Spain that connects the coastal city of Barcelona with the capital, Madrid, passing through the historic city of Zaragoza. It is well known for fast train connections and links different regions of the country.
                                             </p>
                                         </div>
                                     </div>

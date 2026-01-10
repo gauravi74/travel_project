@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState , useEffect  } from 'react'
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { MdOutlineStarPurple500 } from "react-icons/md";
@@ -8,6 +8,73 @@ import Partners from '../Components/Partners'
 import { FaCreditCard } from "react-icons/fa";
 
 function Booking() {
+    const [formData, setFormData] = useState({
+        title: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        gender: '',
+        dob: '',
+        country: '',
+        city: '',
+        address1: '',
+        address2: '',
+        cardHolder: '',
+        cardNumber: '',
+        expiry: '',
+        cvv: ''
+    })
+
+    useEffect(() => {
+        const savedData = localStorage.getItem('bookingData')
+        if (savedData) {
+            setFormData(JSON.parse(savedData))
+        }
+    }, [])
+
+    
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    
+        // ✅ Save data
+        localStorage.setItem('bookingData', JSON.stringify(formData))
+    
+        alert('Booking confirmed & data saved!')
+    
+        // ✅ Clear form
+        setFormData({
+            title: '',
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            gender: '',
+            dob: '',
+            country: '',
+            city: '',
+            address1: '',
+            address2: '',
+            cardHolder: '',
+            cardNumber: '',
+            expiry: '',
+            cvv: ''
+        })
+    }
+    
+    
+
+
+
+
     return (
         <>
             <section className='breadcrumb-main' >
@@ -41,10 +108,10 @@ function Booking() {
                                                     <div className='form-group mb-2 mt-4'>
                                                         <label>Title</label>
                                                         <div className='input-box'>
-                                                            <select className='niceselect' >
-                                                                <option value='0'>Select</option>
-                                                                <option value='1'>Mr.</option>
-                                                                <option value='2'>Mrs.</option>
+                                                            <select className='niceselect' name="title" value={formData.title} onChange={handleChange}>
+                                                                <option value="">Select</option>
+                                                                <option value="Mr">Mr.</option>
+                                                                <option value="Mrs">Mrs.</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -52,35 +119,35 @@ function Booking() {
                                                 <div className='col-md-5'>
                                                     <div className='form-group mb-2 mt-4'>
                                                         <label>First Name</label>
-                                                        <input type='text' placeholder='First Name' />
+                                                        <input type='text' placeholder='First Name' name="firstName" value={formData.firstName} onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className='col-md-5'>
                                                     <div className='form-group mb-2 mt-4'>
                                                         <label>Last Name</label>
-                                                        <input type='text' placeholder='Last Name' />
+                                                        <input type='text' placeholder='Last Name' name="lastName" value={formData.lastName} onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className='col-md-6'>
                                                     <div className='form-group mb-2'>
                                                         <label>Email</label>
-                                                        <input type='email' placeholder='Email Address' />
+                                                        <input type='email' placeholder='Email Address' name="email" value={formData.email} onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className='col-md-5'>
                                                     <div className='form-group mb-2'>
                                                         <label>Phone</label>
-                                                        <input type='text' placeholder='Phone No.' />
+                                                        <input type='text' placeholder='Phone No.' name="phone" value={formData.phone} onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className='col-md-6 col-sm-6'>
                                                     <div className='form-group mb-2'>
                                                         <label>Gender</label>
                                                         <div className='input-box'>
-                                                            <select className='niceselect' >
-                                                                <option value='0'>Select Gender</option>
-                                                                <option value='1'>Male</option>
-                                                                <option value='2'>Female</option>
+                                                            <select className='niceselect' name="gender" value={formData.gender} onChange={handleChange} >
+                                                                <option value=''>Select Gender</option>
+                                                                <option value='Male'>Male</option>
+                                                                <option value='Female'>Female</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -89,7 +156,7 @@ function Booking() {
                                                     <div className='form-group mb-2'>
                                                         <label>DOB</label>
                                                         <div className='input-box'>
-                                                            <input type='date' id='date-time' />
+                                                            <input type='date' id='date-time' name="dob" value={formData.dob} onChange={handleChange} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -97,12 +164,13 @@ function Booking() {
                                                     <div className='form-group mb-2'>
                                                         <label>Select Country</label>
                                                         <div className='input-box'>
-                                                            <select className='niceselect' >
-                                                                <option value='0'>Albania</option>
-                                                                <option value='1'>Malaysia</option>
-                                                                <option value='2'>Singapore</option>
-                                                                <option value='3'>Japan</option>
-                                                                <option value='4'>Thailand</option>
+                                                            <select className='niceselect' name="country" value={formData.country} onChange={handleChange} >
+                                                                <option value="">Select Country</option>
+                                                                <option value="Albania">Albania</option>
+                                                                <option value="Malaysia">Malaysia</option>
+                                                                <option value="Singapore">Singapore</option>
+                                                                <option value="Japan">Japan</option>
+                                                                <option value="Thailand">Thailand</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -111,12 +179,13 @@ function Booking() {
                                                     <div className='form-group mb-2'>
                                                         <label>Select City</label>
                                                         <div className='input-box'>
-                                                            <select className='niceselect' >
-                                                                <option value='0'>Istanbul</option>
-                                                                <option value='1'>London</option>
-                                                                <option value='2'>Texas</option>
-                                                                <option value='3'>Tokyo</option>
-                                                                <option value='4'>Bangkok</option>
+                                                            <select className='niceselect' name="city" value={formData.city} onChange={handleChange} >
+                                                                <option value="">Select City</option>
+                                                                <option value="Istanbul">Istanbul</option>
+                                                                <option value="London">London</option>
+                                                                <option value="Texas">Texas</option>
+                                                                <option value="Tokyo">Tokyo</option>
+                                                                <option value="Bangkok">Bangkok</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -124,13 +193,13 @@ function Booking() {
                                                 <div className='col-md-6'>
                                                     <div className='form-group mb-2 mt-4'>
                                                         <label>Address Line 1</label>
-                                                        <input type='text' placeholder='Address Line 1' />
+                                                        <input type='text' placeholder='Address Line 1' name="address1" value={formData.address1} onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className='col-md-6'>
                                                     <div className='form-group mb-2 mt-4'>
                                                         <label>Address Line 2</label>
-                                                        <input type='text' placeholder='Address Line 2' />
+                                                        <input type='text' placeholder='Address Line 2' name="address2" value={formData.address2} onChange={handleChange} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -149,6 +218,9 @@ function Booking() {
                                                 <li className='nav-item me-2 ms-0' role='presentation'>
                                                     <button className='nav-link active' >Credit/Debit card</button>
                                                 </li>
+                                                {/* <li className='nav-item me-2 ms-0' role='presentation'>
+                                                    <button className='nav-link active' >Credit/Debit card</button>
+                                                </li> */}
                                             </ul>
                                             <div className='tab-content' >
                                                 <div className='tab-pane fade active show' >
@@ -161,32 +233,32 @@ function Booking() {
                                                                         <div className='col-md-6'>
                                                                             <div className='form-group mb-2'>
                                                                                 <label>Card Holder Number</label>
-                                                                                <input type='text'/>
+                                                                                <input type='text' placeholder='' name="cardHolder" value={formData.cardHolder} onChange={handleChange} />
                                                                             </div>
                                                                         </div>
                                                                         <div className='col-md-6'>
                                                                             <div className='form-group mb-2'>
                                                                                 <label>Card Number</label>
-                                                                                <input type='text' placeholder='**** **** **** ****'/>
+                                                                                <input type='text' placeholder='**** **** **** ****' name="cardNumber" value={formData.cardNumber} onChange={handleChange} />
                                                                             </div>
                                                                         </div>
                                                                         <div className='col-md-6'>
                                                                             <div className='form-group mb-2'>
                                                                                 <label>Expiry Date</label>
-                                                                                <input type='text' placeholder='Expiry Date'/>
+                                                                                <input type='text' placeholder='Expiry Date' name="expiry" value={formData.expiry} onChange={handleChange} />
                                                                             </div>
                                                                         </div>
                                                                         <div className='col-md-6'>
                                                                             <div className='form-group mb-2'>
                                                                                 <label>CVC/CVV</label>
-                                                                                <input type='text' placeholder='CVC/CVV'/>
+                                                                                <input type='text' placeholder='CVC/CVV' name="cvv" value={formData.cvv} onChange={handleChange} />
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div className='col-md-4'>
-                                                                <img src={require('../image/cc.png')} alt='credit card'/>
+                                                                <img src={require('../image/cc.png')} alt='credit card' />
                                                             </div>
                                                         </div>
                                                     </form>
@@ -198,7 +270,7 @@ function Booking() {
                                                 <div className='form-group mb-2 w-75'>
                                                     <input type='checkbox' /> By continuing, you agree to the <a>Terms and Conditions.</a>
                                                 </div>
-                                                <a className='nir-btn float-lg-end w-25'>CONFIRM BOOKING</a>
+                                                <a className='nir-btn float-lg-end w-25' onClick={handleSubmit}>CONFIRM BOOKING</a>
                                             </form>
                                         </div>
                                     </div>

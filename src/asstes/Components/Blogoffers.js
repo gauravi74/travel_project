@@ -162,7 +162,7 @@ function Blogoffers() {
                                                         <h6 className='b-name'>Sollmond Nell</h6>
                                                     </div>
 
-                                                    <a href='Home.js' className='nir-btn'>Read More</a>
+                                                    <Link to='#' className='nir-btn'>Read More</Link>
                                                 </div>
                                             </div>
 
@@ -188,7 +188,7 @@ function Blogoffers() {
                                                         <h6 className='b-name'>David Scott</h6>
                                                     </div>
 
-                                                    <a href='Home.js' className='nir-btn'>Read More</a>
+                                                    <Link to='#' className='nir-btn'>Read More</Link>
                                                 </div>
                                             </div>
 
@@ -214,7 +214,7 @@ function Blogoffers() {
                                                         <h6 className='b-name'>John Bolden</h6>
                                                     </div>
 
-                                                    <a href='Home.js' className='nir-btn'>Read More</a>
+                                                    <Link to='#' className='nir-btn'>Read More</Link>
                                                 </div>
                                             </div>
 

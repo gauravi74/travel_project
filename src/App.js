@@ -17,6 +17,7 @@ import Login from './asstes/Pages/Login';
 import Pagenotfound from './asstes/Pages/Pagenotfound';
 import Formlogin from './asstes/Pages/Formlogin';
 import Formregister from './asstes/Pages/Formregister';
+import LoginModal from './asstes/Pages/LoginModal';
 // import RegisterModal from './asstes/Pages/RegisterModal';
 
 
@@ -27,6 +28,7 @@ function App() {
     <>
 
       <Header />
+      <LoginModal/>
       <Login/>
       <Routes>
         <Route path='/' element={<Home />} ></Route>
@@ -43,9 +45,10 @@ function App() {
         <Route path='/login' element={<Formlogin/>}></Route>
         <Route path='/register' element={<Formregister/>}></Route>
       </Routes>
+      
       <Footer />
 
-       
+      
       {/* <Footer/> */}
     </>
   );

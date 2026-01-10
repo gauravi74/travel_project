@@ -35,7 +35,7 @@ function Aboutfeatures({subtitle, title, description, cardtitle1, desc1, cardtit
                                         <CiFlag1 size={70} className='mb-3' />
                                         <h3 style={{ fontSize: '22px' }}>{cardtitle1}</h3>
                                         <p style={{ fontSize: '20px' }}>{desc1}</p>
-                                        <p className='theme mb-0 text-start'>100+ Reviews</p>
+                                        <p className='theme3 mb-0 text-start'>100+ Reviews</p>
                                     </div>
                                 </div>
                                 <div className='col-lg-3 col-sm-6 col-md-6 mb-4'>
@@ -44,7 +44,7 @@ function Aboutfeatures({subtitle, title, description, cardtitle1, desc1, cardtit
                                         <CiLocationOn size={70} className='mb-3' />
                                         <h3 style={{ fontSize: '22px' }}>{cardtitle2}</h3>
                                         <p style={{ fontSize: '20px' }}>{desc2}</p>
-                                        <p className='theme mb-0 text-start'>100+ Reviews</p>
+                                        <p className='theme3 mb-0 text-start'>100+ Reviews</p>
                                     </div>
                                 </div>
                                 <div className='col-lg-3 col-sm-6 col-md-6 mb-4'>
@@ -53,7 +53,7 @@ function Aboutfeatures({subtitle, title, description, cardtitle1, desc1, cardtit
                                         <SlDirections size={70} className='mb-3' />
                                         <h3 style={{ fontSize: '22px' }}>{cardtitle3}</h3>
                                         <p style={{ fontSize: '20px' }}>{desc3}</p>
-                                        <p className='theme mb-0 text-start'>100+ Reviews</p>
+                                        <p className='theme3 mb-0 text-start'>100+ Reviews</p>
                                     </div>
                                 </div>
                                 <div className='col-lg-3 col-sm-6 col-md-6 mb-4'>
@@ -62,7 +62,7 @@ function Aboutfeatures({subtitle, title, description, cardtitle1, desc1, cardtit
                                         <SlCompass size={70} className='mb-3' />
                                         <h3 style={{ fontSize: '22px' }}>{cardtitle4}</h3>
                                         <p style={{ fontSize: '20px' }}>{desc4}</p>
-                                        <p className='theme mb-0 text-start'>100+ Reviews</p>
+                                        <p className='theme3 mb-0 text-start'>100+ Reviews</p>
                                     </div>
                                 </div>
                             </div>

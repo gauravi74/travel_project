@@ -1,117 +1,84 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
+// import './LoginModal.css'; // custom CSS
 
-function LoginModal() {
-  const [loginData, setLoginData] = useState({
-    user_name: "",
-    password_name: "",
-  });
+function LoginModal({ show, onClose }) {
+  const [loginData, setLoginData] = useState({ user_name: "", password: "" });
+  const [error, setError] = useState("");
 
-  const handleLoginChange = (e) => {
-    setLoginData({
-      ...loginData,
-      [e.target.name]: e.target.value,
-    });
+  const handleChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    setError("");
   };
 
-  const handleLoginSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const oldLoginData =
-      JSON.parse(localStorage.getItem("loginData")) || [];
+    if (!loginData.user_name || !loginData.password) {
+      setError("Username/email and password are required");
+      return;
+    }
 
-    oldLoginData.push(loginData);
-    localStorage.setItem("loginData", JSON.stringify(oldLoginData));
+    const users = JSON.parse(localStorage.getItem("registerData")) || [];
+    const userFound = users.find(
+      (user) =>
+        (user.email === loginData.user_name || user.name === loginData.user_name) &&
+        user.password === loginData.password
+    );
 
-    alert("Login data stored");
-
-    setLoginData({
-      user_name: "",
-      password_name: "",
-    });
+    if (userFound) {
+      alert("Login successful ✅");
+      setLoginData({ user_name: "", password: "" });
+      onClose(); // close modal
+    } else {
+      setError("Invalid credentials or user not registered");
+    }
   };
 
+  if (!show) return null;
+
   return (
-    <div
-      className="modal fade"
-      id="loginModal"
-      tabIndex="-1"
-      aria-hidden="true"
-    >
-      <div className="modal-dialog modal-lg modal-dialog-centered">
-        <div className="modal-content">
-          <div className="modal-body">
-            <div className="row">
-              <div className="col-lg-5">
-                <div
-                  className="blog-image rounded"
-                  style={{
-                    backgroundImage: `url(${require("../image/trending5.jpg")})`,
-                    height: "450px",
-                  }}
-                />
-              </div>
+    <div className="modal-backdrop">
+      <div className="modal-container">
+        <button className="close-btn" onClick={onClose}>&times;</button>
+        <h2 className="modal-title">Login</h2>
 
-              <div className="col-lg-7">
-                <h4 className="text-center border-b pb-2">Login</h4>
-
-                <div className="d-flex mb-3">
-                  <button className="btn btn-facebook w-100 me-2">
-                    <FaFacebook /> Login with Facebook
-                  </button>
-                  <button className="btn btn-google w-100">
-                    <FaGoogle /> Login with Google
-                  </button>
-                </div>
-
-                <form onSubmit={handleLoginSubmit}>
-                  <input
-                    type="text"
-                    name="user_name"
-                    className="form-control mb-2"
-                    placeholder="Username or Email"
-                    value={loginData.user_name}
-                    onChange={handleLoginChange}
-                  />
-
-                  <input
-                    type="password"
-                    name="password_name"
-                    className="form-control mb-2"
-                    placeholder="Password"
-                    value={loginData.password_name}
-                    onChange={handleLoginChange}
-                  />
-
-                  <div className="d-flex justify-content-between mb-2">
-                    <label>
-                      <input type="checkbox" /> Remember me
-                    </label>
-                    <Link to="#">Lost password?</Link>
-                  </div>
-
-                  <button className="nir-btn w-100" type="submit">
-                    Login
-                  </button>
-
-                  <p className="text-center mt-2">
-                    Don’t have an account?{" "}
-                    <button
-                      type="button"
-                      className="btn btn-link theme"
-                      data-bs-dismiss="modal"
-                      data-bs-toggle="modal"
-                      data-bs-target="#registerModal"
-                    >
-                      Register
-                    </button>
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
+        <div className="social-buttons">
+          <button className="btn-facebook"><FaFacebook /> Login with Facebook</button>
+          <button className="btn-google"><FaGoogle /> Login with Google</button>
         </div>
+
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Username or Email"
+            value={loginData.user_name}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={loginData.password}
+            onChange={handleChange}
+          />
+
+          <div className="remember-me">
+            <label>
+              <input type="checkbox" /> Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+
+          {error && <p className="error-msg">{error}</p>}
+
+          <button type="submit" className="btn-login">Login</button>
+        </form>
+
+        <p className="switch-text">
+          Don't have an account? <a href="#">Register</a>
+        </p>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { FaRegEye } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import { FaComments } from "react-icons/fa";
-import { FaPlay } from "react-icons/fa";
+// import { FaPlay } from "react-icons/fa";
 import { FaQuoteLeft } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
@@ -13,10 +13,29 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { MdOutlineStarPurple500 } from "react-icons/md";
-import Blogoffers from '../Components/Blogoffers';
+import Blog from '../Components/Blog';
 import Partners from '../Components/Partners';
+import { FaPlay, FaTimes } from "react-icons/fa";
+import sampleVideo2 from "../video/sampleVideo2.mp4";
 
 function Blogdetail() {
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handlePlay = () => {
+        setIsOpen(true); // open modal
+        setTimeout(() => {
+            videoRef.current.play();
+            setIsPlaying(true);
+        }, 100); // slight delay to ensure video loads
+    };
+
+    const handleClose = () => {
+        videoRef.current.pause();
+        setIsPlaying(false);
+        setIsOpen(false);
+    };
     return (
         <>
             <Container>
@@ -29,7 +48,7 @@ function Blogdetail() {
                                     <a className='tag white bg-theme py-1 px-3 me-2 rounded'>#Technology</a>
                                     <a className='tag py-1 px-3'><FaRegEye /> 2500</a>
                                 </div>
-                                <h1 className='lh-sm'>Apple honors eight developers with annual Apple Design Awards.</h1>
+                                <h1 className='blog-title1'>Apple honors eight developers with annual Apple Design Awards.</h1>
                                 <div className='author-detail d-flex align-items-center'>
                                     <span className='me-3'><a><FaClock /> Posted On : 12 May 2021 </a></span>
                                     <span className='me-3'><a><FaUser /> Jack Richard</a></span>
@@ -41,10 +60,18 @@ function Blogdetail() {
                             <div className='box-shadow p-3 position-relative'>
                                 <img alt='blog detail' src={require('../image/trending6.jpg')} className='w-100 rounded img-fluid' />
                                 <div className='video-button text-center position-absolute top-50 w-100 mx-auto z-index3 start-50 translate-middle'>
-                                    <div className='call-button text-center'>
-                                        <button className='play-btn js-video-button video-button' type='button' data-video-id="152879427" data-channel="vimeo"><FaPlay size={20} color='white' /></button>
+                                    <div className="call-button text-center">
+                                        <button
+                                            type="button"
+                                            className="play-btn"
+                                            onClick={handlePlay}
+                                        >
+                                            <FaPlay color="white" size={25}/>
+                                            {/* Play Video */}
+                                        </button>
                                     </div>
-                                    <div className='video-figure'></div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -73,13 +100,13 @@ function Blogdetail() {
                                 <div className='blog-wrapper'>
                                     <div className='blog-content'>
                                         <div className='blog-imagelist mb-3'>
-                                            <img src={require('../image/bg3.jpg')} alt="image"  className="rounded img-fluid" />
+                                            <img src={require('../image/bg3.jpg')} alt="image" className="rounded img-fluid" />
                                         </div>
                                         <p className='mb-3'>The tech world is constantly evolving, and Apple continues to set the bar for innovative app design. Each year, developers push the boundaries of creativity, crafting apps that not only function flawlessly but also deliver an exceptional user experience. <br></br>
                                             <br></br>In this article, we explore some of the standout apps recognized by the Apple Design Awards. These apps demonstrate a perfect balance of performance, usability, and design aesthetics, making them not just tools but experiences that enrich users' daily lives. Whether you're a designer, developer, or simply a tech enthusiast, these stories of innovation provide inspiration for the future of digital creativity. </p>
                                     </div>
                                     <div className='blog-quote mb-4 rounded'>
-                                    <FaQuoteLeft size={50} color='white' />
+                                        <FaQuoteLeft size={50} color='white' />
                                         <p className='white'>“To take a trivial example, which ever undertakes laborious physical work exercise, except obtain some advantage blinded”</p>
                                         <span className='text-white'>By Michael Delwell  </span>
                                     </div>
@@ -132,22 +159,32 @@ function Blogdetail() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='blog-next mb-4 d-sm-flex align-items-center rounded'>
-                                        <a className='d-block bg-theme'>
-                                            <div className='prev ps-4'>
-                                                <BiLeftArrowAlt size={30} color='white' />
-                                                <p className='m-0 white'>Previous Post</p>
-                                                <p className='m-0 white'>The bedding was hardly able</p>
+                                    <div className="blog-next mb-4 row g-0 rounded overflow-hidden">
+
+                                        {/* Previous */}
+                                        <a className="col-12 col-sm-6 bg-theme text-decoration-none">
+                                            <div className="p-4 h-100 d-flex align-items-center">
+                                                <BiLeftArrowAlt size={30} color="white" />
+                                                <div className="ms-3">
+                                                    <p className="m-0 text-white">Previous Post</p>
+                                                    <p className="m-0 text-white">The bedding was hardly able</p>
+                                                </div>
                                             </div>
                                         </a>
-                                        <a className='d-block bg-grey'>
-                                            <div className='prev ps-4'>
-                                                <BiRightArrowAlt size={30} color='black' />
-                                                <p className='m-0 black'>Previous Post</p>
-                                                <p className='m-0 black'>The bedding was hardly able</p>
+
+                                        {/* Next */}
+                                        <a className="col-12 col-sm-6 bg-grey text-decoration-none">
+                                            <div className="p-4 h-100 d-flex align-items-center justify-content-sm-end text-sm-end">
+                                                <div className="me-3">
+                                                    <p className="m-0 text-dark">Next Post</p>
+                                                    <p className="m-0 text-dark">The bedding was hardly able</p>
+                                                </div>
+                                                <BiRightArrowAlt size={30} color="black" />
                                             </div>
                                         </a>
+
                                     </div>
+
                                     <div className='single-comments single-box mb-4'>
                                         <h4 className='mb-4'>Showing 16 verified guest comments</h4>
                                         {/* comment 1 */}
@@ -205,12 +242,12 @@ function Blogdetail() {
                                             <div className='row'>
                                                 <div className='col-md-6'>
                                                     <div className='form-group mb-2'>
-                                                        <input type='text' placeholder='Name' className='form-control w-100'/>
+                                                        <input type='text' placeholder='Name' className='form-control w-100' />
                                                     </div>
                                                 </div>
                                                 <div className='col-md-6'>
                                                     <div className='form-group mb-2'>
-                                                        <input type='email' placeholder='Email' className='form-control w-100'/>
+                                                        <input type='email' placeholder='Email' className='form-control w-100' />
                                                     </div>
                                                 </div>
                                                 <div className='col-md-12'>
@@ -272,25 +309,47 @@ function Blogdetail() {
                                             <li><a href='#'>Search Results</a></li>
                                         </ul>
                                     </div>
+
                                     <div className='popular-post sidebar-item mb-4'>
                                         <div className='sidebar-tabs'>
                                             <div className='post-tabs'>
                                                 <ul className='nav nav-tabs nav-pills nav-fill' id='postsTab1' role='tablist'>
                                                     <li className='nav-item d-inline-block' role='presentation'>
-                                                        <button aria-selected="false" data-bs-target="#recent" data-bs-toggle="tab" id="popular-tab" className='nav-link active' type='button' >Popular</button>
+                                                        <button
+                                                            aria-selected="true"
+                                                            data-bs-target="#popular"
+                                                            data-bs-toggle="tab"
+                                                            id="popular-tab"
+                                                            className='nav-link active'
+                                                            type='button'
+                                                        >
+                                                            Popular
+                                                        </button>
                                                     </li>
                                                     <li className='nav-item d-inline-block' role='presentation'>
-                                                        <button aria-selected="false" data-bs-target="#recent" data-bs-toggle="tab" id="recent-tab" className='nav-link' type='button' >Recent</button>
+                                                        <button
+                                                            aria-selected="false"
+                                                            data-bs-target="#recent"
+                                                            data-bs-toggle="tab"
+                                                            id="recent-tab"
+                                                            className='nav-link'
+                                                            type='button'
+                                                        >
+                                                            Recent
+                                                        </button>
                                                     </li>
                                                 </ul>
+
                                                 <div className='tab-content' id='postsTabContent1'>
-                                                    <div className='tab-pane fade active show' aria-labelledby="recent-tab" id="recent" role="tabpanel">
+
+                                                    {/* Popular Tab Content */}
+                                                    <div className='tab-pane fade show active' aria-labelledby="popular-tab" id="popular" role="tabpanel">
                                                         <article className='post mb-2 border-b pb-2'>
                                                             <div className='s-content d-flex align-items-center justify-space-between'>
-                                                                <div className='sidebar-image col-4 col-sm-3 me-3 rounded'>
-                                                                    <a><img src={require('../image/trending1.jpg')} alt='blog' className='img-fluid rounded'/></a>
+                                                                <div className='sidebar-image w-25 me-3 rounded'>
+                                                                    <a><img src={require('../image/trending1.jpg')} alt='blog1' /></a>
                                                                 </div>
-                                                                <div className='content-list col-8 col-sm-9'>
+                                                                <div className='content-list w-75'>
                                                                     <h5 className='mb-1'><a>An Incredibly Easy Method That Works For All</a></h5>
                                                                     <div className='date'>10 Apr 2021</div>
                                                                 </div>
@@ -298,10 +357,10 @@ function Blogdetail() {
                                                         </article>
                                                         <article className='post mb-2 border-b pb-2'>
                                                             <div className='s-content d-flex align-items-center justify-space-between'>
-                                                            <div className='sidebar-image col-4 col-sm-3 me-3 rounded'>
-                                                                    <a><img src={require('../image/trending2.jpg')} alt='blog' className='img-fluid rounded'/></a>
+                                                                <div className='sidebar-image w-25 me-3 rounded'>
+                                                                    <a><img src={require('../image/trending2.jpg')} alt='blog2' /></a>
                                                                 </div>
-                                                                <div className='content-list col-8 col-sm-9'>
+                                                                <div className='content-list w-75'>
                                                                     <h5 className='mb-1'><a>15 Unheard Ways To Achieve Greater Walker</a></h5>
                                                                     <div className='date'>29 Mar 2021</div>
                                                                 </div>
@@ -309,36 +368,36 @@ function Blogdetail() {
                                                         </article>
                                                         <article className='post mb-2 border-b pb-2'>
                                                             <div className='s-content d-flex align-items-center justify-space-between'>
-                                                                <div className='sidebar-image col-4 col-sm-3 me-3 rounded'>
-                                                                    <a><img src={require('../image/trending1.jpg')} alt='blog' className='img-fluid rounded' /></a>
+                                                                <div className='sidebar-image w-25 me-3 rounded'>
+                                                                    <a><img src={require('../image/trending1.jpg')} alt='blog3' /></a>
                                                                 </div>
-                                                                <div className='content-list col-8 col-sm-9'>
+                                                                <div className='content-list w-75'>
                                                                     <h5 className='mb-1'><a>An Incredibly Easy Method That Works For All</a></h5>
                                                                     <div className='date'>10 Apr 2021</div>
                                                                 </div>
                                                             </div>
                                                         </article>
-                                                        <article className='post mb-2 border-b pb-2'>
-                                                            <div className='s-content d-flex align-items-center justify-space-between'>
-                                                                <div className='sidebar-image col-4 col-sm-3 me-3 rounded'>
-                                                                    <a><img src={require('../image/trending4.jpg')} alt='blog' className='img-fluid rounded'/></a>
+                                                        {/* <article className='post mb-2 border-b pb-2'>
+                                                                <div className='s-content d-flex align-items-center justify-space-between'>
+                                                                    <div className='sidebar-image w-25 me-3 rounded'>
+                                                                        <a><img src={require('../image/trending4.jpg')} alt='blog4' /></a>
+                                                                    </div>
+                                                                    <div className='content-list w-75'>
+                                                                        <h5 className='mb-1'><a>15 Unheard Ways To Achieve Greater Walker</a></h5>
+                                                                        <div className='date'>29 Mar 2021</div>
+                                                                    </div>
                                                                 </div>
-                                                                <div className='content-list col-8 col-sm-9'>
-                                                                    <h5 className='mb-1'><a>15 Unheard Ways To Achieve Greater Walker</a></h5>
-                                                                    <div className='date'>29 Mar 2021</div>
-                                                                </div>
-                                                            </div>
-                                                        </article>
+                                                            </article> */}
                                                     </div>
 
-
-                                                    {/* <div className='tab-pane fade active show' aria-labelledby="recent-tab" id="recent" role="tabpanel">
+                                                    {/* Recent Tab Content */}
+                                                    <div className='tab-pane fade' aria-labelledby="recent-tab" id="recent" role="tabpanel">
                                                         <article className='post mb-2 border-b pb-2'>
                                                             <div className='s-content d-flex align-items-center justify-space-between'>
-                                                                <div className='sidebar-image col-4 col-sm-3 me-3 rounded'>
-                                                                    <a><img src={require('../image/trending5.jpg')} alt='blog' className='img-fluid rounded'/></a>
+                                                                <div className='sidebar-image w-25 me-3 rounded'>
+                                                                    <a><img src={require('../image/trending5.jpg')} alt='blog5' /></a>
                                                                 </div>
-                                                                <div className='content-list col-8 col-sm-9'>
+                                                                <div className='content-list w-75'>
                                                                     <h5 className='mb-1'><a>10 Ways To Immediately Start Selling Furniture</a></h5>
                                                                     <div className='date'>08 Mar 2021</div>
                                                                 </div>
@@ -346,10 +405,10 @@ function Blogdetail() {
                                                         </article>
                                                         <article className='post mb-2 border-b pb-2'>
                                                             <div className='s-content d-flex align-items-center justify-space-between'>
-                                                                <div className='sidebar-image col-4 col-sm-3 me-3 rounded'>
-                                                                    <a><img src={require('../image/trending6.jpg')} alt='blog' className='img-fluid rounded' /></a>
+                                                                <div className='sidebar-image w-25 me-3 rounded'>
+                                                                    <a><img src={require('../image/trending6.jpg')} alt='blog6' /></a>
                                                                 </div>
-                                                                <div className='content-list col-8 col-sm-9'>
+                                                                <div className='content-list w-75'>
                                                                     <h5 className='mb-1'><a>Photography Photo modify and Beautiful Walker</a></h5>
                                                                     <div className='date'>18 Jan 2021</div>
                                                                 </div>
@@ -357,30 +416,29 @@ function Blogdetail() {
                                                         </article>
                                                         <article className='post mb-2 border-b pb-2'>
                                                             <div className='s-content d-flex align-items-center justify-space-between'>
-                                                                <div className='sidebar-image col-4 col-sm-3 me-3 rounded'>
-                                                                    <a><img src={require('../image/trending1.jpg')} alt='blog' className='img-fluid rounded'/></a>
+                                                                <div className='sidebar-image w-25 me-3 rounded'>
+                                                                    <a><img src={require('../image/trending1.jpg')} alt='blog7' /></a>
                                                                 </div>
-                                                                <div className='content-list col-8 col-sm-9'>
+                                                                <div className='content-list w-75'>
                                                                     <h5 className='mb-1'><a>An Incredibly Easy Method That Works For All</a></h5>
                                                                     <div className='date'>10 Apr 2021</div>
                                                                 </div>
                                                             </div>
                                                         </article>
-                                                        <article className='post mb-2 border-b pb-2'>
-                                                            <div className='s-content d-flex align-items-center justify-space-between'>
-                                                                <div className='sidebar-image col-4 col-sm-3 me-3 rounded'>
-                                                                    <a><img src={require('../image/trending3.jpg')} alt='blog' className='img-fluid rounded'/></a>
+                                                        {/* <article className='post mb-2 border-b pb-2'>
+                                                                <div className='s-content d-flex align-items-center justify-space-between'>
+                                                                    <div className='sidebar-image w-25 me-3 rounded'>
+                                                                        <a><img src={require('../image/trending3.jpg')} alt='blog8' /></a>
+                                                                    </div>
+                                                                    <div className='content-list w-75'>
+                                                                        <h5 className='mb-1'><a>1Certified Graphic Design with Free Project Course</a></h5>
+                                                                        <div className='date'>12 Feb 2021</div>
+                                                                    </div>
                                                                 </div>
-                                                                <div className='content-list col-8 col-sm-9'>
-                                                                    <h5 className='mb-1'><a>1Certified Graphic Design with Free Project Course</a></h5>
-                                                                    <div className='date'>12 Feb 2021</div>
-                                                                </div>
-                                                            </div>
-                                                        </article>
-                                                    </div> */}
+                                                            </article> */}
+                                                    </div>
+
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -411,9 +469,21 @@ function Blogdetail() {
             </Container>
 
 
-            <Blogoffers />
+            <Blog />
             <Partners />
 
+            {/* video modal */}
+            {isOpen && (
+                <div className="video-modal">
+                    <div className="video-wrapper">
+                        
+                        <video ref={videoRef} src={sampleVideo2} controls width="100%" />
+                        <button className="close-btn" onClick={handleClose}>
+                            <FaTimes size={25} color="#fff" />
+                        </button>
+                    </div>
+                </div>
+            )}
         </>
     )
 }

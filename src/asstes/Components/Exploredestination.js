@@ -47,7 +47,7 @@ function Exploredestination() {
                 <div className='row'>
                   <div className='col-lg-6 col-md-6 col-sm-6 mb-4'>
                     <div className='card card-overlay trend-item1'>
-                      <img src={de4} alt="image2" className='hover-img'/>
+                      <img src={de4} alt="image2" className='hover-img explore-destiny'/>
                       <div className="overlay"></div>
                       <div className='trend-content1 d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index'>
                         <div className='trend-content-title text-start'>
@@ -61,7 +61,7 @@ function Exploredestination() {
                   </div>
                   <div className='col-lg-6 col-md-6 col-sm-6 mb-4'>
                     <div className='card card-overlay trend-item1'>
-                      <img src={de2} alt="image3" className='hover-img' />
+                      <img src={de2} alt="image3" className='hover-img explore-destiny' />
                       <div className="overlay"></div>
                       <div className='trend-content1 d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index'>
                         <div className='trend-content-title text-start'>
@@ -77,7 +77,7 @@ function Exploredestination() {
                 <div className='row'>
                   <div className='col-lg-6 col-md-6 col-sm-6 mb-4'>
                     <div className='card card-overlay trend-item1'>
-                      <img src={de3} alt="image4" className='hover-img'/>
+                      <img src={de3} alt="image4" className='hover-img explore-destiny'/>
                       <div className="overlay"></div>
                       <div className='trend-content1 d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index'>
                         <div className='trend-content-title text-start'>
@@ -90,7 +90,7 @@ function Exploredestination() {
                   </div>
                   <div className='col-lg-6 col-md-6 col-sm-6 mb-4'>
                     <div className='card card-overlay trend-item1'>
-                      <img src={de5} alt="image5"  className='hover-img'/>
+                      <img src={de5} alt="image5"  className='hover-img explore-destiny'/>
                       <div className="overlay"></div>
                       <div className='trend-content1 d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index'>
                         <div className='trend-content-title text-start'>

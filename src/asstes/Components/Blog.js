@@ -49,7 +49,7 @@ function Blog() {
                             <h6 className='b-name'>Sollmond Nell</h6>
                           </div>
 
-                          <a href='Home.js' className='exp-btn'>Read More</a>
+                          <Link to='#' className='read-more-btn'>Read More</Link>
                         </div>
                       </div>
 
@@ -75,7 +75,7 @@ function Blog() {
                             <h6 className='b-name'>David Scott</h6>
                           </div>
 
-                          <a href='Home.js' className='exp-btn'>Read More</a>
+                          <Link to='#' className='read-more-btn'>Read More</Link>
                         </div>
                       </div>
 
@@ -101,7 +101,7 @@ function Blog() {
                             <h6 className='b-name'>John Bolden</h6>
                           </div>
 
-                          <a href='Home.js' className='exp-btn'>Read More</a>
+                          <Link to='#' className='read-more-btn '>Read More</Link>
                         </div>
                       </div>
 

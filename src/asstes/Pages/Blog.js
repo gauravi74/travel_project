@@ -278,19 +278,41 @@ function Blog() {
                                                 <li><a href='#'>Search Results</a></li>
                                             </ul>
                                         </div>
+
                                         <div className='popular-post sidebar-item mb-4'>
                                             <div className='sidebar-tabs'>
                                                 <div className='post-tabs'>
                                                     <ul className='nav nav-tabs nav-pills nav-fill' id='postsTab1' role='tablist'>
                                                         <li className='nav-item d-inline-block' role='presentation'>
-                                                            <button aria-selected="false" data-bs-target="#recent" data-bs-toggle="tab" id="popular-tab" className='nav-link active' type='button' >Popular</button>
+                                                            <button
+                                                                aria-selected="true"
+                                                                data-bs-target="#popular"
+                                                                data-bs-toggle="tab"
+                                                                id="popular-tab"
+                                                                className='nav-link active'
+                                                                type='button'
+                                                            >
+                                                                Popular
+                                                            </button>
                                                         </li>
                                                         <li className='nav-item d-inline-block' role='presentation'>
-                                                            <button aria-selected="false" data-bs-target="#recent" data-bs-toggle="tab" id="recent-tab" className='nav-link' type='button' >Recent</button>
+                                                            <button
+                                                                aria-selected="false"
+                                                                data-bs-target="#recent"
+                                                                data-bs-toggle="tab"
+                                                                id="recent-tab"
+                                                                className='nav-link'
+                                                                type='button'
+                                                            >
+                                                                Recent
+                                                            </button>
                                                         </li>
                                                     </ul>
+
                                                     <div className='tab-content' id='postsTabContent1'>
-                                                        <div className='tab-pane fade active show' aria-labelledby="recent-tab" id="recent" role="tabpanel">
+
+                                                        {/* Popular Tab Content */}
+                                                        <div className='tab-pane fade show active' aria-labelledby="popular-tab" id="popular" role="tabpanel">
                                                             <article className='post mb-2 border-b pb-2'>
                                                                 <div className='s-content d-flex align-items-center justify-space-between'>
                                                                     <div className='sidebar-image w-25 me-3 rounded'>
@@ -337,8 +359,8 @@ function Blog() {
                                                             </article>
                                                         </div>
 
-
-                                                        <div className='tab-pane fade active show' aria-labelledby="recent-tab" id="recent" role="tabpanel">
+                                                        {/* Recent Tab Content */}
+                                                        <div className='tab-pane fade' aria-labelledby="recent-tab" id="recent" role="tabpanel">
                                                             <article className='post mb-2 border-b pb-2'>
                                                                 <div className='s-content d-flex align-items-center justify-space-between'>
                                                                     <div className='sidebar-image w-25 me-3 rounded'>
@@ -384,12 +406,12 @@ function Blog() {
                                                                 </div>
                                                             </article>
                                                         </div>
+
                                                     </div>
-
-
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div className='sidebar-item mb-4'>
                                             <h4>Tags</h4>
                                             <ul className='sidebar-tags'>
@@ -417,7 +439,7 @@ function Blog() {
                 </section>
             </Container>
 
-            <Blogarticle/>
+            <Blogarticle />
 
 
         </>

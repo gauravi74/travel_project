@@ -137,7 +137,7 @@ function Aboutexplore({ smalltitle, maintitle, desc1, desc2 }) {
                                                     </div>
 
                                                     <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
-                                                        <div className='counter-item border-end pe-4'>
+                                                        <div className='counter-item pe-4'>
                                                             <div className="counter-content">
                                                                 <h2 className="stat-number" >320</h2>
                                                                 <p className="stat-label">Award Winning</p>

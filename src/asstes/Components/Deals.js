@@ -36,7 +36,7 @@ function Deals() {
                                 <div className='card position-relative mb-4 overflow-hidden card-overlay trend-item1'>
 
                                     {/* Image */}
-                                    <img src={image1} alt="Norway Lake" className="tour-img" />
+                                    <img src={image1} alt="Norway Lake" className="tour-img " />
                                     <div className="overlay"></div>
                                     {/* Content on Image */}
                                     <div className='trend-content position-absolute bottom-0 start-0 w-100 p-4 z-10'>
